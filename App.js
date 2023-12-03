@@ -1,20 +1,43 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import * as React from 'react';
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import { useFonts } from 'expo-font';
+
+import HomeScreen from './screens/HomeScreen';
+import Login from './screens/Login';
+import Register from './screens/Register';
+
+const Stack = createNativeStackNavigator();
 
 export default function App() {
-  return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
-  );
-}
+    const [fontsLoaded] = useFonts({
+        "Poppins Bold": require('./assets/fonts/poppins_bold.ttf'),
+        "Poppins Regular": require('./assets/fonts/poppins_regular.ttf'),
+        "Poppins Light": require('./assets/fonts/poppins_light.ttf'),
+        "Space Mono Bold": require('./assets/fonts/SpaceMono-Bold.ttf'),
+        "Space Mono Regular": require('./assets/fonts/SpaceMono-Regular.ttf'),
+    });
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+    if (!fontsLoaded) {
+        return null;
+    }
+
+    return (
+        <NavigationContainer>
+            <Stack.Navigator>
+                <Stack.Screen 
+                    name="Home" 
+                    component={HomeScreen}
+                    options={{headerShown: false}}/>
+                <Stack.Screen 
+                    name="Login" 
+                    component={Login}
+                    options={{headerShown: false}}/>
+                <Stack.Screen
+                    name="Register"
+                    component={Register} 
+                    options={{headerShown: false}}/>
+            </Stack.Navigator>
+        </NavigationContainer>
+    );
+}
