@@ -14,6 +14,7 @@ export default function App() {
         "Poppins Bold": require('./assets/fonts/poppins_bold.ttf'),
         "Poppins Regular": require('./assets/fonts/poppins_regular.ttf'),
         "Poppins Light": require('./assets/fonts/poppins_light.ttf'),
+        "Poppins Semi-Bold": require('./assets/fonts/poppins_semibold.ttf'),
         "Space Mono Bold": require('./assets/fonts/SpaceMono-Bold.ttf'),
         "Space Mono Regular": require('./assets/fonts/SpaceMono-Regular.ttf'),
     });

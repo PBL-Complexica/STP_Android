@@ -1,5 +1,5 @@
 import React from 'react';
-import { Text, View, Button, Image, SafeAreaView } from 'react-native';
+import { Text, View, Button, Image, SafeAreaView, TouchableOpacity } from 'react-native';
 import { styles } from '../styles/Styles';
 
 export default function HomeScreen({ navigation }) {
@@ -11,19 +11,17 @@ export default function HomeScreen({ navigation }) {
                     style={styles.welcome_image}/>
                 <Text style={styles.welcome_text}>Make things easier with STP.</Text>
                 <Text style={styles.default_text}>STP is a free public transport subscription manager.</Text>
-                <View style={styles.button}>
-                    <Button
-                        title="Login"
-                        color={styles.colorScheme === "dark" ? "#fff" : "#000"}
-                        // color="#FFFF4967"
-                        onPress={() => navigation.navigate('Login')} />
-                </View>
-                <View style={styles.button}>
-                    <Button
-                        title="Register"
-                        color={styles.colorScheme === "dark" ? "#fff" : "#000"}
-                        // color="#FFFF4967"
-                        onPress={() => navigation.navigate('Register')} />
+                <View style={{padding: 50}}>
+                    <TouchableOpacity 
+                        style={styles.red_button}
+                        onPress={() => navigation.navigate('Register')}>
+                        <Text style={styles.white_button_text}>Register</Text>
+                    </TouchableOpacity>
+                    <TouchableOpacity 
+                        style={styles.empty_button}
+                        onPress={() => navigation.navigate('Login')}>
+                        <Text style={styles.black_button_text}>Login</Text>
+                    </TouchableOpacity>
                 </View>
             </View>
         </SafeAreaView>
