@@ -120,6 +120,15 @@ const styles = StyleSheet.create({
         borderRadius: 25,
         marginTop: 60,
     },
+    login_button: {
+        // color: colorScheme === "dark" ? "#fff" : "#000",
+        // paddingTop: 15,
+        width: "30%",
+        alignSelf: "center",
+        backgroundColor: "#ff4967",
+        borderRadius: 25,
+        marginTop: 60,
+    },
     buttonRow: {
         flexDirection: 'row', // Align items in a row
         alignSelf: 'center',  // Center the row within its container
@@ -138,6 +147,15 @@ const styles = StyleSheet.create({
         lineHeight: 20,
         marginStart: 5,
         textDecorationLine: 'none',
+      },
+      small_text2: {
+        color: colorScheme === 'dark' ? '#fff' : '#000',
+        fontFamily: 'Poppins Light',
+        fontSize: 15,
+        lineHeight: 20,
+        textAlign: 'right',
+        marginEnd: 60,
+        marginTop: 10,
       },
 }
 );
