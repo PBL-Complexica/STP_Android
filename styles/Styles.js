@@ -12,6 +12,12 @@ const styles = StyleSheet.create({
         // alignItems: "center",
         justifyContent: "center",
     },
+    container2: {
+        backgroundColor: colorScheme === "dark" ? "#000" : "#fff",
+        paddingTop: Platform.OS === "android" ? StatusBar.currentHeight : 0,
+        justifyContent: "center",
+        flex:1
+    },
     welcome_image: {
         flex: 0,
         width: 300,
@@ -22,10 +28,11 @@ const styles = StyleSheet.create({
     red_button: {
         // color: colorScheme === "dark" ? "#fff" : "#000",
         // paddingTop: 15,
-        width: "50%",
+        width: "40%",
         alignSelf: "center",
         backgroundColor: "#ff4967",
-        borderRadius: 20,
+        borderRadius: 25,
+        marginTop: 10,
     },
     empty_button: {
         width: "50%",
@@ -72,7 +79,67 @@ const styles = StyleSheet.create({
         fontFamily: "Poppins Light",
         fontSize: 15,
         lineHeight: 20,
-    }
-});
+    },
+    register_signin_img: {
+        width: 300,
+        height: 200,
+        alignSelf: "center",
+        resizeMode: "contain",
+    },
+    register_signin_header:{
+        color: colorScheme === "dark" ? "#fff" : "#000",
+        paddingHorizontal: "5%",
+        fontSize: 30,
+        textAlign: "left",
+        margin: 10,
+        lineHeight: 40,
+        fontFamily: "Poppins Bold",
+        marginLeft:30,
+        marginBottom: 40,
+        marginTop: 40,
+        },
+    input_field: {
+        padding:10,
+        paddingStart: 20,
+        paddingEnd: 20,
+        borderWidth: 1.5,
+        borderColor: '#49497D',
+        borderRadius: 30,
+        marginLeft: 50,
+        marginRight: 50,
+        marginTop:15,
+        fontFamily: "Poppins Light",
+        fontSize: 15
+    },
+    signup_button: {
+        // color: colorScheme === "dark" ? "#fff" : "#000",
+        // paddingTop: 15,
+        width: "30%",
+        alignSelf: "center",
+        backgroundColor: "#ff4967",
+        borderRadius: 25,
+        marginTop: 60,
+    },
+    buttonRow: {
+        flexDirection: 'row', // Align items in a row
+        alignSelf: 'center',  // Center the row within its container
+        marginTop: 20,        // Adjust the spacing as needed
+      },
+      small_text: {
+        color: colorScheme === 'dark' ? '#fff' : '#000',
+        fontFamily: 'Poppins Light',
+        fontSize: 15,
+        lineHeight: 20,
+      },
+      link_text: {
+        color: '#FF4967',     // Assuming this is the link color
+        fontFamily: 'Poppins Semi-Bold',
+        fontSize: 15,
+        lineHeight: 20,
+        marginStart: 5,
+        textDecorationLine: 'none',
+      },
+}
+);
 
 export { styles, colorScheme };

@@ -15,12 +15,12 @@ export default function HomeScreen({ navigation }) {
                     <TouchableOpacity 
                         style={styles.red_button}
                         onPress={() => navigation.navigate('Register')}>
-                        <Text style={styles.white_button_text}>Register</Text>
+                        <Text style={styles.white_button_text}>Sign up</Text>
                     </TouchableOpacity>
                     <TouchableOpacity 
                         style={styles.empty_button}
                         onPress={() => navigation.navigate('Login')}>
-                        <Text style={styles.black_button_text}>Login</Text>
+                        <Text style={styles.black_button_text}>Log In</Text>
                     </TouchableOpacity>
                 </View>
             </View>
