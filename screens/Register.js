@@ -26,6 +26,9 @@ export default function Register({ navigation }) {
     console.log("Username:", username);
     console.log("Email or Phone:", emailOrPhone);
     console.log("Password:", password);
+
+    // Navigate to MainScreen and pass the username as a parameter
+    navigation.navigate('MainScreen', { userName: username });
   };
 
   return (

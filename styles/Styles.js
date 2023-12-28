@@ -157,7 +157,163 @@ const styles = StyleSheet.create({
         marginEnd: 60,
         marginTop: 10,
       },
+
+      ///////////////////////////////////
+      headerContainer: {
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+        alignItems: 'center',
+        marginHorizontal: 20,
+      },
+      profileContainer: {
+        flex: 1,
+      },
+      headerText: {
+        fontSize: 25,
+        fontFamily: 'Poppins Semi-Bold',
+        color: '#000',
+      },
+      subheaderText: {
+        fontSize: 15,
+        fontFamily: 'Poppins Light',
+        color: '#000',
+      },
+      profileImageContainer: {
+        borderRadius: 50,
+        width: 50,
+        height: 50,
+        justifyContent: 'center',
+        alignItems: 'center',
+      },
+      profileImage: {
+        width: 50,  // Adjust the width to match the container size
+        height: 50, // Adjust the height to match the container size
+        borderRadius: 25, // Adjust the borderRadius accordingly
+      },
+      subscriptionBox: {
+        backgroundColor: '#49497D',
+        borderRadius: 25,
+        margin: 20,
+        marginTop: 50,
+        padding: 15,
+        flexDirection: 'row',
+        alignItems: 'flex-start', // Align items at the start (top)
+        position: 'relative', // Set position to relative
+      },
+      
+      subscriptionTextContainer: {
+        flex: 1,
+        marginRight: 15, // Add some space between text and image
+      },
+      
+      subscriptionHeaderText: {
+        fontSize: 16,
+        fontFamily: 'Poppins Bold',
+        color: '#fff',
+        marginBottom: 5, // Add some space between header and subheader
+        maxWidth: '70%',
+      },
+      
+      subscriptionSubheaderText: {
+        fontSize: 12,
+        fontFamily: 'Poppins Light',
+        color: '#fff',
+      },
+      
+      personImage: {
+        width: 130,
+        height: 130,
+        position: 'absolute', // Set position to absolute
+        top: -25, // Adjust the top value as needed
+        right: 10, // Adjust the right value as needed
+      },
+      availableSubscriptions: {
+        marginTop: 20,
+        marginHorizontal: 20,
+      },
+      availableSubscriptionsHeader: {
+        fontSize: 20,
+        fontFamily: 'Poppins Bold',
+        color: '#000',
+      },
+      subscriptionsSubheader: {
+        fontSize: 12,
+        fontFamily: 'Poppins Light',
+        color: '#000',
+        marginBottom: 15,
+      },
+      subscriptionBoxContainer: {
+        flexDirection: 'column',
+        justifyContent: 'space-between',
+      },
+      subscriptionBoxOption: {
+        marginRight: 0,
+        marginLeft  : 0,
+        borderRadius: 25,
+        padding: 20,
+        flexDirection: 'row',
+        alignItems: 'center',
+        justifyContent: 'space-between',
+        marginBottom: 15,
+      },
+      subscriptionBoxImage: {
+        width: 50,
+        height: 50,
+        borderRadius: 15,
+        marginRight: 10,
+        // Add other image styles as needed
+      },
+      subscriptionBoxTextContainer: {
+        flex: 1,
+        marginRight: 10,
+        marginLeft: 10,
+      },
+      selectionCircle: {
+        width: 40,
+        height: 40,
+        borderRadius:20,
+        backgroundColor: '#fff',
+      },
+      specialButton: {
+        width: "40%",
+        alignSelf: "center",
+        backgroundColor: "#ff4967",
+        borderRadius: 25,
+        marginTop: 30,
+      },
+      backgroundSquare: {
+        position: 'absolute',
+        top: 15,
+        left: 15,
+        width: '20%',
+        height: '120%',
+        backgroundColor: '#E8E8E8',
+        borderRadius: 15,
+      },
+      lockImage: {
+        width: 25, // Adjust the width as needed
+        height: 25, // Adjust the height as needed
+        resizeMode: 'contain', // Preserve the aspect ratio
+        position: 'absolute', // Set position to absolute
+        top: 7.5, // Adjust the top value as needed    
+        right: 7.5, // Adjust the right value as needed
+      },
 }
 );
 
-export { styles, colorScheme };
+
+const generateStyles = (isSelected) => StyleSheet.create({
+  subscriptionBoxHeader: {
+    fontSize: 16,
+    fontFamily: 'Poppins Bold',
+    color: isSelected ? 'white' : 'black',
+  },
+  subscriptionBoxSubheader: {
+    fontSize: 14,
+    fontFamily: 'Poppins Light',
+    color: isSelected ? '#fff' : 'black',
+  },
+  // Add other styles as needed
+});
+
+export { styles, colorScheme, generateStyles };
