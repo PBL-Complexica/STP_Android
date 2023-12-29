@@ -13,6 +13,7 @@ import { styles } from "../styles/Styles";
 import BackButton from "../components/BackButton";
 
 export default function Login({ navigation }) {
+  const [username, setUsername] = useState("");
   const [emailOrPhone, setEmailOrPhone] = useState("");
   const [password, setPassword] = useState("");
   const [passwordVisibility, setPasswordVisibility] = useState(false);
@@ -24,6 +25,8 @@ export default function Login({ navigation }) {
     // For now, let's just log the values
     console.log("Email or Phone:", emailOrPhone);
     console.log("Password:", password);
+    // Navigate to MainScreen and pass the username as a parameter
+    navigation.navigate("MainScreen", { userName: username });
   };
 
   return (
