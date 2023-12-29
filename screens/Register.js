@@ -28,14 +28,14 @@ export default function Register({ navigation }) {
     console.log("Password:", password);
 
     // Navigate to MainScreen and pass the username as a parameter
-    navigation.navigate('MainScreen', { userName: username });
+    navigation.navigate("MainScreen", { userName: username });
   };
 
   return (
     <SafeAreaView style={styles.container2}>
       <>
-      {/* <BackButton navigation={navigation} /> */}
-      <View>
+        {/* <BackButton navigation={navigation} /> */}
+        <View>
           <Image
             source={require("../assets/images/signup_image.png")}
             style={styles.register_signin_img}
@@ -49,9 +49,7 @@ export default function Register({ navigation }) {
           />
           <TextInput
             value={emailOrPhone}
-            onChangeText={(newEmailOrPhone) =>
-              setEmailOrPhone(newEmailOrPhone)
-            }
+            onChangeText={(newEmailOrPhone) => setEmailOrPhone(newEmailOrPhone)}
             style={styles.input_field}
             placeholder="Phone or Email"
           />
@@ -62,24 +60,18 @@ export default function Register({ navigation }) {
             placeholder="Password"
             secureTextEntry={!passwordVisibility}
           />
-          <TouchableOpacity
-            style={styles.signup_button}
-            onPress={handleSignUp}
-          > 
-          <Text style={styles.white_button_text}>Sign up</Text>
+          <TouchableOpacity style={styles.signup_button} onPress={handleSignUp}>
+            <Text style={styles.white_button_text}>Sign up</Text>
           </TouchableOpacity>
 
           <View style={styles.buttonRow}>
-            <Text style={styles.small_text}>
-              Already have an account?
-            </Text>
+            <Text style={styles.small_text}>Already have an account?</Text>
             <TouchableOpacity onPress={() => navigation.navigate("Login")}>
               <Text style={styles.link_text}>Log in</Text>
             </TouchableOpacity>
           </View>
-          </View>
+        </View>
       </>
     </SafeAreaView>
   );
 }
-
