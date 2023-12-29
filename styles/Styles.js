@@ -305,6 +305,86 @@ const styles = StyleSheet.create({
     top: 7.5, // Adjust the top value as needed
     right: 7.5, // Adjust the right value as needed
   },
+  ////////////////////////////////////
+  //Settings page
+  vectorContainerTop: {
+    position: 'absolute',
+    top: 0,
+    //left: 0,
+    right: 0,
+    zIndex: 1, // Ensure it's above other components
+  },
+  vectorContainerBottom: {
+    position: 'absolute',
+    bottom: 0,
+    //left: 0,
+    right: 0,
+    zIndex: 1, // Ensure it's above other components
+  },
+  contentContainer: {
+    paddingHorizontal: 20,
+    flex: 1,
+    justifyContent: 'space-between',
+  },
+  profileContainer1: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    marginTop: 60,
+  },
+  profileImage1: {
+    width: 50,
+    height: 50,
+    borderRadius: 25,
+  },
+  userName: {
+    marginLeft: 10,
+    fontSize: 20,
+    fontFamily: "Poppins Bold",
+  },
+  optionsContainer: {
+    marginTop: 0,
+    paddingHorizontal: 25,
+  },
+  optionItem: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    paddingVertical: 10,
+  },
+  optionText: {
+    fontSize: 15,
+    fontFamily: "Poppins Semi-Bold",
+  },
+  arrowIcon: {
+    width: 20,
+    height: 20,
+  },
+  separatorLine1: {
+    height: 0.5,
+    backgroundColor: '#ff4967',
+    marginVertical: 20,
+    maxWidth: '100%',
+  },
+  separatorLine2: {
+    height: 0.5,
+    backgroundColor: '#ff4967',
+    marginVertical: 0,
+    marginHorizontal: 30,
+  },
+  logOutContainer: {
+    position: 'relative',
+    zIndex: 2, // Higher z-index to be above the vector
+  },
+  logOutButton: {
+    marginHorizontal: 30,
+    marginBottom: 50,
+  },
+  logOutButtonText: {
+    color: '#ff4967',
+    fontSize: 15,
+    fontFamily: "Poppins Semi-Bold",
+  },
+  
 });
 
 const generateStyles = (isSelected) =>
