@@ -360,14 +360,14 @@ const styles = StyleSheet.create({
     height: 20,
   },
   separatorLine1: {
-    height: 0.5,
-    backgroundColor: '#ff4967',
+    height: 1,
+    backgroundColor: 'rgba(255, 73, 103, 0.17)',
     marginVertical: 20,
     maxWidth: '100%',
   },
   separatorLine2: {
-    height: 0.5,
-    backgroundColor: '#ff4967',
+    height: 1,
+    backgroundColor: 'rgba(255, 73, 103, 0.17)',
     marginVertical: 0,
     marginHorizontal: 30,
   },
@@ -384,7 +384,50 @@ const styles = StyleSheet.create({
     fontSize: 15,
     fontFamily: "Poppins Semi-Bold",
   },
-  
+  ///////////////////////////////////
+  // Your account page
+  container3: {
+    flex: 1,
+    justifyContent: 'center',
+    paddingHorizontal: 20,
+    flexDirection: "column",
+    justifyContent:"center",
+    textAlign: "left",
+  },
+  profileImage: {
+    width: 100,
+    height: 100,
+    borderRadius: 50,
+    marginBottom: 50,
+    alignSelf: "center",
+  },
+  profileText: {
+    fontSize: 15,
+    fontFamily: "Poppins Semi-Bold",
+    marginTop: 30,
+    marginBottom: 10,
+    marginLeft: 45,
+  },
+  separatorLine: {
+    height: 1,
+    backgroundColor: 'rgba(255, 73, 103, 0.17)',
+    marginHorizontal: 30,
+  },
+  editProfileButton: {
+    width: "40%",
+    alignSelf: "center",
+    backgroundColor: "#ff4967",
+    borderRadius: 25,
+    marginTop: 50,
+    paddingHorizontal: 20,
+    paddingVertical : 10,
+  },
+  editProfileButtonText: {
+    color: 'white',
+    fontSize: 15,
+    fontFamily: 'Poppins Semi-Bold',
+    textAlign: "center",
+  },
 });
 
 const generateStyles = (isSelected) =>

@@ -10,7 +10,8 @@ import MainScreen from "./screens/MainScreen";
 import GeneralPassScreen from "./screens/GeneralPassScreen";
 import StudentPassScreen from "./screens/StudentPassScreen";
 import PupilPassScreen from "./screens/PupilPassScreen";
-import SettingsScreen from "./screens/SettingsScreen";
+import Settings from "./screens/Settings";
+import YourAccount from "./screens/YourAccount";
 
 const Stack = createNativeStackNavigator();
 
@@ -67,8 +68,13 @@ export default function App() {
           options={{ headerShown: false }}
         />
         <Stack.Screen
-          name="SettingsScreen"
-          component={SettingsScreen}
+          name="Settings"
+          component={Settings}
+          options={{ headerShown: false }}
+        />
+        <Stack.Screen
+          name="YourAccount"
+          component={YourAccount}
           options={{ headerShown: false }}
         />
       </Stack.Navigator>

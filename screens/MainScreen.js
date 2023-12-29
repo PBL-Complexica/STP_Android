@@ -56,7 +56,7 @@ export default function MainScreen({ navigation, route }) {
             </Text>
           </View>
           <TouchableOpacity
-            onPress={() => navigation.navigate("SettingsScreen")}
+            onPress={() => navigation.navigate("Settings")}
             style={styles.profileImageContainer}
           >
             <Image
