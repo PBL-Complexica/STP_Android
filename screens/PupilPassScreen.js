@@ -6,12 +6,27 @@ import { styles } from "../styles/Styles";
 
 export default function PupilPassScreen({ navigation }) {
   return (
-    <SafeAreaView style={styles.container}>
+    <SafeAreaView style={styles.container4}>
       <>
-        <BackButton navigation={navigation} />
-        <View>
-          <Text>Pupil Pass Screen</Text>
+        {/* Heading and Subheading */}
+        <View style={styles.headingContainer}>
+          <Text style={styles.headingText}>Pupil Public Transport Pass</Text>
+          <Text style={styles.subheadingText}>
+            Back to school more convenient, affordable, and eco-conscious with
+            the Pupil Pass!
+          </Text>
         </View>
+
+        {/* Colored Rectangle */}
+        <View style={styles.coloredRectangle}></View>
+
+        {/* Small Rectangles */}
+        <View style={styles.smallRectanglesContainer}>
+          <View style={styles.smallRectangleBlue}></View>
+          <View style={styles.smallRectanglePurple}></View>
+        </View>
+
+        {/* Input Fields */}
       </>
     </SafeAreaView>
   );

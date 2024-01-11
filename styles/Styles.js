@@ -434,6 +434,45 @@ const styles = StyleSheet.create({
     fontFamily: 'Poppins Semi-Bold',
     textAlign: "center",
   },
+  //////////////////////////////////
+  // General/Pupil/Student Pass screens
+  container4: { 
+    paddingTop: "20%",
+    flexDirection: "column",
+    justifyContent:"center",
+    textAlign: "left",
+  },
+  headingContainer: {
+    marginBottom: 20,
+    marginHorizontal: 20,
+  },
+  headingText: {
+    fontSize: 20,
+    fontFamily: 'Poppins Semi-Bold',      
+  },
+  subheadingText: {
+    fontSize: 12,
+    fontFamily: 'Poppins Light',
+  },
+  coloredRectangle: {
+    height: 15,
+    backgroundColor: 'rgba(255, 73, 103, 0.14)',
+  },
+  smallRectanglesContainer: {
+    flexDirection: 'row',
+    marginTop: 0,
+  },
+  smallRectangleBlue: {
+    width: 70,
+    height: 8,
+    backgroundColor: '#548EE1',
+    marginRight: 0,
+  },
+  smallRectanglePurple: {
+    width: 70,
+    height: 8,
+    backgroundColor: '#49497D',
+  },
 });
 
 const generateStyles = (isSelected) =>
