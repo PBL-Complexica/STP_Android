@@ -191,7 +191,7 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
   },
-  profileImage: {
+  profileImageMain: {
     width: 50, // Adjust the width to match the container size
     height: 50, // Adjust the height to match the container size
     borderRadius: 25, // Adjust the borderRadius accordingly
@@ -312,14 +312,14 @@ const styles = StyleSheet.create({
     top: 0,
     //left: 0,
     right: 0,
-    zIndex: 1, // Ensure it's above other components
+    zIndex: 0, // Ensure it's under other components
   },
   vectorContainerBottom: {
     position: 'absolute',
     bottom: 0,
     //left: 0,
     right: 0,
-    zIndex: 1, // Ensure it's above other components
+    zIndex: 0, // Ensure it's under other components
   },
   contentContainer: {
     paddingHorizontal: 20,
@@ -401,11 +401,16 @@ const styles = StyleSheet.create({
     marginBottom: 50,
     alignSelf: "center",
   },
+  label:{
+    fontSize: 12,
+    fontFamily: "Poppins Regular",
+    marginTop: 15,
+    marginLeft: 45,
+  },
   profileText: {
     fontSize: 15,
     fontFamily: "Poppins Semi-Bold",
-    marginTop: 30,
-    marginBottom: 10,
+    marginTop: 5,
     marginLeft: 45,
   },
   separatorLine: {
@@ -421,6 +426,7 @@ const styles = StyleSheet.create({
     marginTop: 50,
     paddingHorizontal: 20,
     paddingVertical : 10,
+    zIndex:1,
   },
   editProfileButtonText: {
     color: 'white',

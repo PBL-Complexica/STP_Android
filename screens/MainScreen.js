@@ -61,7 +61,7 @@ export default function MainScreen({ navigation, route }) {
           >
             <Image
               source={require("../assets/images/img1.png")}
-              style={styles.profileImage}
+              style={styles.profileImageMain}
             />
           </TouchableOpacity>
         </View>
