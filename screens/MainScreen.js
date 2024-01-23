@@ -65,7 +65,12 @@ export default function MainScreen({ navigation, route }) {
             />
           </TouchableOpacity>
         </View>
-        <View style={styles.subscriptionBox}>
+
+        {/* Subscription Box */}
+        <TouchableOpacity
+          style={styles.subscriptionBox}
+          onPress={() => navigation.navigate("DigitalPassScreen")}
+        >
           <View style={styles.subscriptionTextContainer}>
             <Text style={styles.subscriptionHeaderText}>
               General Subscription Active
@@ -76,7 +81,7 @@ export default function MainScreen({ navigation, route }) {
             source={require("../assets/images/person_image.png")}
             style={styles.personImage}
           />
-        </View>
+        </TouchableOpacity>
 
         {/* Available Subscriptions Section */}
         <View style={styles.availableSubscriptions}>

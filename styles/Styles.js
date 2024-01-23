@@ -473,6 +473,89 @@ const styles = StyleSheet.create({
     height: 8,
     backgroundColor: '#49497D',
   },
+  /////////////////////////
+  // Digital Pass Screen  
+  codeHeadeContainer: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+  },
+  codeHeader: {
+    fontSize: 24,
+    fontFamily: 'Poppins Bold',
+    marginLeft: '25%',
+  },
+  codeSubHeader: {
+    fontSize: 12,
+    fontFamily: 'Poppins Regular',
+    marginLeft: '25%',
+    marginBottom: '5%',
+  },
+  barcodeIcon: {
+    width: 24,
+    height: 24,
+    marginRight: '5%',
+    marginBottom: '1%',
+  },
+  grayBox: {
+    backgroundColor: '#ededee',
+    borderRadius: 25,
+    padding: 20,
+    marginVertical: 20,
+    marginHorizontal: '10%',
+    minHeight: '35%',
+    justifyContent: 'center', // Center vertically
+    alignItems: 'center',     // Center horizontally
+  },
+  code: {
+    fontSize: 24,
+    fontFamily: 'Poppins Light',
+  },
+  textPassType: {
+    fontSize: 12,
+    fontFamily: 'Poppins Semi-Bold',
+    alignSelf: 'center',
+  },
+  textValid: {
+    fontSize: 12,
+    fontFamily: 'Poppins Semi-Bold',
+    alignSelf: 'center',
+  },
+  spacing: {
+    height: 20,
+  },
+  refreshButtonContainer: {
+    position: 'relative',
+    zIndex: 2, // Higher z-index to be above the vector
+  },
+  refreshButton: {
+    width: 160,
+    height: 50,
+    alignSelf: "center",
+    backgroundColor: "#ff4967",
+    borderRadius: 30,
+    marginTop: '20%',
+    justifyContent: "center",
+    alignItems  : "center", 
+  },
+  refreshButtonText: {
+    color: '#FFFFFF',
+    textAlign: 'center',
+    fontSize: 16,
+    fontFamily: 'Poppins Semi-Bold',
+    zIndex:1,
+  },
+  /////////////////////////
+  // Loading Screen
+  loadingContainer: {
+    alignItems: "center",
+  },
+  loadingText: {
+    textAlign: "center",
+    fontSize: 16,
+    color: "#000000",
+    marginTop: 40,
+    fontFamily: "Poppins Regular",},
 });
 
 const generateStyles = (isSelected) =>
