@@ -545,6 +545,17 @@ const styles = StyleSheet.create({
     fontFamily: 'Poppins Semi-Bold',
     zIndex:1,
   },
+  /////////////////////////
+  // Loading Screen
+  loadingContainer: {
+    alignItems: "center",
+  },
+  loadingText: {
+    textAlign: "center",
+    fontSize: 16,
+    color: "#000000",
+    marginTop: 40,
+    fontFamily: "Poppins Regular",},
 });
 
 const generateStyles = (isSelected) =>

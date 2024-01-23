@@ -13,6 +13,7 @@ import PupilPassScreen from "./screens/PupilPassScreen";
 import Settings from "./screens/Settings";
 import YourAccount from "./screens/YourAccount";
 import DigitalPassScreen from "./screens/DigitalPassScreen";
+import LoadingScreen from "./screens/LoadingScreen";
 
 const Stack = createNativeStackNavigator();
 
@@ -82,6 +83,11 @@ export default function App() {
         <Stack.Screen
           name="DigitalPassScreen"
           component={DigitalPassScreen}
+          options={{ headerShown: false }}
+        />
+        <Stack.Screen
+          name="LoadingScreen"
+          component={LoadingScreen}
           options={{ headerShown: false }}
         />
       </Stack.Navigator>
