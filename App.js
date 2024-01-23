@@ -12,6 +12,7 @@ import StudentPassScreen from "./screens/StudentPassScreen";
 import PupilPassScreen from "./screens/PupilPassScreen";
 import Settings from "./screens/Settings";
 import YourAccount from "./screens/YourAccount";
+import DigitalPassScreen from "./screens/DigitalPassScreen";
 
 const Stack = createNativeStackNavigator();
 
@@ -23,6 +24,7 @@ export default function App() {
     "Poppins Semi-Bold": require("./assets/fonts/poppins_semibold.ttf"),
     "Space Mono Bold": require("./assets/fonts/SpaceMono-Bold.ttf"),
     "Space Mono Regular": require("./assets/fonts/SpaceMono-Regular.ttf"),
+
   });
 
   if (!fontsLoaded) {
@@ -75,6 +77,11 @@ export default function App() {
         <Stack.Screen
           name="YourAccount"
           component={YourAccount}
+          options={{ headerShown: false }}
+        />
+        <Stack.Screen
+          name="DigitalPassScreen"
+          component={DigitalPassScreen}
           options={{ headerShown: false }}
         />
       </Stack.Navigator>
