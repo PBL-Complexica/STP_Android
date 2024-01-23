@@ -39,24 +39,27 @@ export const getRefresh = () => {
     return false;
   }
 
-  fetch(host + '/refresh', {
-    method: 'GET',
-    headers: {
-      'Content-Type': 'application/json',
-      'Authorization': 'Bearer ' + SecureStore.getItemAsync('refresh_token')
-    }
-  })
-    .then(response => response.json())
-    .then(data => {
-      if (data.access_token) {
-        SecureStore.setItemAsync('access_token', data.access_token);
-        return true;
+  SecureStore.getItemAsync('refresh_token').then(token => {
+    fetch(host + '/refresh', {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': 'Bearer ' + token
       }
-      return false;
     })
-    .catch(error => console.log(error));
-    
-    return false;
+      .then(response => response.json())
+      .then(data => {
+        if (data.access_token) {
+          SecureStore.setItemAsync('access_token', data.access_token);
+        }
+      })
+      .catch(error => console.log(error));  
+  });
+
+  if (SecureStore.getItemAsync('access_token')) {
+    return true;
+  }
+  return false;
 }
 
 export const postSignup = (
