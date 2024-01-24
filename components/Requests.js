@@ -15,7 +15,7 @@ export const getIndex = () => {
   console.log(Device.modelName);
 };
 
-export const postLogin = (emailOrPhone, password) => {
+export const postLogin = (emailOrPhone, password, navigation) => {
   fetch(host + '/login', {
     method: 'POST',
     headers: {
@@ -31,11 +31,12 @@ export const postLogin = (emailOrPhone, password) => {
       SecureStore.setItemAsync('access_token', data.access_token);
       SecureStore.setItemAsync('refresh_token', data.refresh_token);
       console.log(data);
-      user.id = data.data.user_id;
-      user.fname = data.data.first_name;
-      user.lname = data.data.last_name;
-      user.email = data.data.email_address;
-      user.phone = data.data.phone_number;
+      user.id = data.response.data.user_id;
+      user.fname = data.response.data.first_name;
+      user.lname = data.response.data.last_name;
+      user.email = data.response.data.email_address;
+      user.phone = data.response.data.phone_number;
+      navigation.navigate("MainScreen");
     })
     .catch(error => console.log(error));
 
