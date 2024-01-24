@@ -159,7 +159,7 @@ export default function MainScreen({ navigation }) {
 
         <TouchableOpacity
           style={styles.empty_button}
-          onPress={() => navigation.navigate("")}
+          // onPress={() => navigation.navigate("")}
         >
           <Text style={styles.black_button_text}>Special Passes</Text>
         </TouchableOpacity>
