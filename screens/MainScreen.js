@@ -8,10 +8,9 @@ import {
 } from "react-native";
 
 import { styles, generateStyles } from "../styles/Styles";
+import { user } from "../components/UserData";
 
-export default function MainScreen({ navigation, route }) {
-  // Extract userName from the route params
-  const { userName } = route.params;
+export default function MainScreen({ navigation }) {
 
   // Array representing subscription boxes
   const subscriptionBoxes = [
@@ -31,13 +30,13 @@ export default function MainScreen({ navigation, route }) {
     // Navigate to the appropriate screen based on the selected box
     switch (selectedBox) {
       case 1:
-        navigation.navigate("GeneralPassScreen", { userName });
+        navigation.navigate("GeneralPassScreen");
         break;
       case 2:
-        navigation.navigate("StudentPassScreen", { userName });
+        navigation.navigate("StudentPassScreen");
         break;
       case 3:
-        navigation.navigate("PupilPassScreen", { userName });
+        navigation.navigate("PupilPassScreen");
         break;
       default:
         // Handle default case or show an error message
@@ -50,7 +49,7 @@ export default function MainScreen({ navigation, route }) {
       <View>
         <View style={styles.headerContainer}>
           <View style={styles.profileContainer}>
-            <Text style={styles.headerText}>What's up, {userName}</Text>
+            <Text style={styles.headerText}>What's up, {user.fname}</Text>
             <Text style={styles.subheaderText}>
               Where are you heading today?
             </Text>

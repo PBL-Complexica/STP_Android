@@ -8,8 +8,18 @@ import {
   TouchableOpacity,
 } from "react-native";
 import { styles } from "../styles/Styles";
+import { getData, getRefresh } from "../components/Requests";
+import { user } from "../components/UserData";
 
 export default function HomeScreen({ navigation }) {
+  if (getRefresh()) {
+    // Retrieve the data from the API
+    getData();
+
+    // Go to MainScreen if refresh token is valid
+    return navigation.navigate("MainScreen");
+  }
+
   return (
     <SafeAreaView style={styles.container}>
       <View>
