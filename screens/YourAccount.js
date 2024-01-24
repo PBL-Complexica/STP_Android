@@ -11,13 +11,14 @@ import {
 
 import BackButton from "../components/BackButton";
 import { styles } from "../styles/Styles";
+import { user } from "../components/UserData";
 
 export default function YourAccount({ navigation }) {
   const [editMode, setEditMode] = useState(false);
-  const [name_surname, setNameSurname] = useState("Ionela Popescu");
-  const [birthday, setBirthday] = useState("01/01/2000");
-  const [phoneNumber, setPhoneNumber] = useState("1234567890");
-  const [email, setEmail] = useState("example@email.com");
+  const [name_surname, setNameSurname] = useState(user.fname + " " + user.lname);
+  const [birthday, setBirthday] = useState(user.birthday);
+  const [phoneNumber, setPhoneNumber] = useState(user.phone);
+  const [email, setEmail] = useState(user.email);
   const [password, setPassword] = useState("********");
 
   const handleEditProfile = () => {

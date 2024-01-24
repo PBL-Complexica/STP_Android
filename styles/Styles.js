@@ -319,7 +319,7 @@ const styles = StyleSheet.create({
     bottom: 0,
     //left: 0,
     right: 0,
-    zIndex: 0, // Ensure it's under other components
+    zIndex: -1, // Ensure it's under other components
   },
   contentContainer: {
     paddingHorizontal: 20,
