@@ -437,10 +437,12 @@ const styles = StyleSheet.create({
   //////////////////////////////////
   // General/Pupil/Student Pass screens
   container4: { 
-    paddingTop: "20%",
+    paddingTop: "5%",
     flexDirection: "column",
     justifyContent:"center",
     textAlign: "left",
+    backgroundColor: 'white',
+    flex: 1,
   },
   headingContainer: {
     marginBottom: 20,
@@ -472,6 +474,53 @@ const styles = StyleSheet.create({
     width: 70,
     height: 8,
     backgroundColor: '#49497D',
+  },
+  formContainer: {
+    marginHorizontal: 20,
+    marginTop: 70,
+  },
+  inputLabel:{
+    fontSize: 15,
+    fontFamily: 'Poppins Semi-Bold',
+    marginTop : 30,
+    marginLeft: 10,
+  },
+  durationDropdown: {
+    zIndex: 2,
+    borderColor: '#cccccc',
+    borderRadius  : 25,
+    borderWidth: 1.5,
+  },
+  monthDropdown: { 
+    zIndex: 1,
+    borderColor: '#cccccc',
+    borderRadius  : 25,
+    borderWidth: 1.5,
+  },
+  paymentDropdown: {
+    zIndex: 0,
+    borderColor: '#cccccc',
+    borderRadius  : 25,
+    borderWidth: 1.5,
+  },
+  buttonRow: {
+    flexDirection: 'row',
+    justifyContent: 'flex-end',
+    marginTop: 10,
+    marginRight: 10, // Adjust the margin as needed
+  },
+  confirmButton: {
+    width: "35%",
+    backgroundColor: "#ff4967",
+    borderRadius: 25,
+    marginTop: 75,
+    marginLeft: 10,
+  },
+  cancelButton: {
+    width: "30%",
+    borderRadius: 25,
+    marginTop: 75,
+    backgroundColor: "white",
   },
   /////////////////////////
   // Digital Pass Screen  
