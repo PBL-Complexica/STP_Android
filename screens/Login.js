@@ -25,9 +25,8 @@ export default function Login({ navigation }) {
     // For now, let's just log the values
     console.log("Email or Phone:", emailOrPhone);
     console.log("Password:", password);
-    postLogin(emailOrPhone, password);
+    postLogin(emailOrPhone, password, navigation);
     // Navigate to MainScreen and pass the username as a parameter
-    navigation.navigate("MainScreen", { userName: username });
   };
 
   return (
