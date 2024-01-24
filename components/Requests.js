@@ -3,7 +3,6 @@ import React, { useState } from 'react';
 import * as Device from 'expo-device';
 import * as SecureStore from 'expo-secure-store';
 import { tokens, user } from './UserData';
-import { get } from 'react-native/Libraries/TurboModule/TurboModuleRegistry';
 
 const host = process.env.EXPO_PUBLIC_FLASK_HOST;
 
@@ -94,7 +93,7 @@ export const getData = (navigation) => {
       user.lname = data.data.last_name;
       user.email = data.data.email_address;
       user.phone = data.data.phone_number;
-      // console.log(user);
+      user.birthday = data.data.birth_date;
       navigation.navigate("MainScreen");
     })
     .catch(error => console.log(error));
@@ -120,7 +119,7 @@ export const postSignup = (
       email_address: emailAddress,
       password: password,
       device_name: Device.modelName,
-      birth_date: null, // TODO: Get birth date
+      birth_date: null,
     })
   })
     // TODO: Add response handling
