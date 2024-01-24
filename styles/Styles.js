@@ -308,14 +308,14 @@ const styles = StyleSheet.create({
   ////////////////////////////////////
   //Settings page
   vectorContainerTop: {
-    position: 'absolute',
+    position: "absolute",
     top: 0,
     //left: 0,
     right: 0,
     zIndex: 0, // Ensure it's under other components
   },
   vectorContainerBottom: {
-    position: 'absolute',
+    position: "absolute",
     bottom: 0,
     //left: 0,
     right: 0,
@@ -324,11 +324,11 @@ const styles = StyleSheet.create({
   contentContainer: {
     paddingHorizontal: 20,
     flex: 1,
-    justifyContent: 'space-between',
+    justifyContent: "space-between",
   },
   profileContainer1: {
-    flexDirection: 'row',
-    alignItems: 'center',
+    flexDirection: "row",
+    alignItems: "center",
     marginTop: 60,
   },
   profileImage1: {
@@ -346,9 +346,9 @@ const styles = StyleSheet.create({
     paddingHorizontal: 25,
   },
   optionItem: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    alignItems: 'center',
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems: "center",
     paddingVertical: 10,
   },
   optionText: {
@@ -361,18 +361,18 @@ const styles = StyleSheet.create({
   },
   separatorLine1: {
     height: 1,
-    backgroundColor: 'rgba(255, 73, 103, 0.17)',
+    backgroundColor: "rgba(255, 73, 103, 0.17)",
     marginVertical: 20,
-    maxWidth: '100%',
+    maxWidth: "100%",
   },
   separatorLine2: {
     height: 1,
-    backgroundColor: 'rgba(255, 73, 103, 0.17)',
+    backgroundColor: "rgba(255, 73, 103, 0.17)",
     marginVertical: 0,
     marginHorizontal: 30,
   },
   logOutContainer: {
-    position: 'relative',
+    position: "relative",
     zIndex: 2, // Higher z-index to be above the vector
   },
   logOutButton: {
@@ -380,7 +380,7 @@ const styles = StyleSheet.create({
     marginBottom: 50,
   },
   logOutButtonText: {
-    color: '#ff4967',
+    color: "#ff4967",
     fontSize: 15,
     fontFamily: "Poppins Semi-Bold",
   },
@@ -388,10 +388,10 @@ const styles = StyleSheet.create({
   // Your account page
   container3: {
     flex: 1,
-    justifyContent: 'center',
+    justifyContent: "center",
     paddingHorizontal: 20,
     flexDirection: "column",
-    justifyContent:"center",
+    justifyContent: "center",
     textAlign: "left",
   },
   profileImage: {
@@ -401,7 +401,7 @@ const styles = StyleSheet.create({
     marginBottom: 50,
     alignSelf: "center",
   },
-  label:{
+  label: {
     fontSize: 12,
     fontFamily: "Poppins Regular",
     marginTop: 15,
@@ -415,7 +415,7 @@ const styles = StyleSheet.create({
   },
   separatorLine: {
     height: 1,
-    backgroundColor: 'rgba(255, 73, 103, 0.17)',
+    backgroundColor: "rgba(255, 73, 103, 0.17)",
     marginHorizontal: 30,
   },
   editProfileButton: {
@@ -425,23 +425,23 @@ const styles = StyleSheet.create({
     borderRadius: 25,
     marginTop: 50,
     paddingHorizontal: 20,
-    paddingVertical : 10,
-    zIndex:1,
+    paddingVertical: 10,
+    zIndex: 1,
   },
   editProfileButtonText: {
-    color: 'white',
+    color: "white",
     fontSize: 15,
-    fontFamily: 'Poppins Semi-Bold',
+    fontFamily: "Poppins Semi-Bold",
     textAlign: "center",
   },
   //////////////////////////////////
   // General/Pupil/Student Pass screens
-  container4: { 
+  container4: {
     paddingTop: "5%",
     flexDirection: "column",
-    justifyContent:"center",
+    justifyContent: "center",
     textAlign: "left",
-    backgroundColor: 'white',
+    backgroundColor: "white",
     flex: 1,
   },
   headingContainer: {
@@ -450,62 +450,62 @@ const styles = StyleSheet.create({
   },
   headingText: {
     fontSize: 20,
-    fontFamily: 'Poppins Semi-Bold',      
+    fontFamily: "Poppins Semi-Bold",
   },
   subheadingText: {
     fontSize: 12,
-    fontFamily: 'Poppins Light',
+    fontFamily: "Poppins Light",
   },
   coloredRectangle: {
     height: 15,
-    backgroundColor: 'rgba(255, 73, 103, 0.14)',
+    backgroundColor: "rgba(255, 73, 103, 0.14)",
   },
   smallRectanglesContainer: {
-    flexDirection: 'row',
+    flexDirection: "row",
     marginTop: 0,
   },
   smallRectangleBlue: {
     width: 70,
     height: 8,
-    backgroundColor: '#548EE1',
+    backgroundColor: "#548EE1",
     marginRight: 0,
   },
   smallRectanglePurple: {
     width: 70,
     height: 8,
-    backgroundColor: '#49497D',
+    backgroundColor: "#49497D",
   },
   formContainer: {
     marginHorizontal: 20,
     marginTop: 70,
   },
-  inputLabel:{
+  inputLabel: {
     fontSize: 15,
-    fontFamily: 'Poppins Semi-Bold',
-    marginTop : 30,
+    fontFamily: "Poppins Semi-Bold",
+    marginTop: 30,
     marginLeft: 10,
   },
   durationDropdown: {
     zIndex: 2,
-    borderColor: '#cccccc',
-    borderRadius  : 25,
+    borderColor: "#cccccc",
+    borderRadius: 25,
     borderWidth: 1.5,
   },
-  monthDropdown: { 
+  monthDropdown: {
     zIndex: 1,
-    borderColor: '#cccccc',
-    borderRadius  : 25,
+    borderColor: "#cccccc",
+    borderRadius: 25,
     borderWidth: 1.5,
   },
   paymentDropdown: {
     zIndex: 0,
-    borderColor: '#cccccc',
-    borderRadius  : 25,
+    borderColor: "#cccccc",
+    borderRadius: 25,
     borderWidth: 1.5,
   },
   buttonRow: {
-    flexDirection: 'row',
-    justifyContent: 'flex-end',
+    flexDirection: "row",
+    justifyContent: "flex-end",
     marginTop: 10,
     marginRight: 10, // Adjust the margin as needed
   },
@@ -523,58 +523,58 @@ const styles = StyleSheet.create({
     backgroundColor: "white",
   },
   /////////////////////////
-  // Digital Pass Screen  
+  // Digital Pass Screen
   codeHeadeContainer: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    justifyContent: 'space-between',
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "space-between",
   },
   codeHeader: {
     fontSize: 24,
-    fontFamily: 'Poppins Bold',
-    marginLeft: '25%',
+    fontFamily: "Poppins Bold",
+    marginLeft: "25%",
   },
   codeSubHeader: {
     fontSize: 12,
-    fontFamily: 'Poppins Regular',
-    marginLeft: '25%',
-    marginBottom: '5%',
+    fontFamily: "Poppins Regular",
+    marginLeft: "25%",
+    marginBottom: "5%",
   },
   barcodeIcon: {
     width: 24,
     height: 24,
-    marginRight: '5%',
-    marginBottom: '1%',
+    marginRight: "5%",
+    marginBottom: "1%",
   },
   grayBox: {
-    backgroundColor: '#ededee',
+    backgroundColor: "#ededee",
     borderRadius: 25,
     padding: 20,
     marginVertical: 20,
-    marginHorizontal: '10%',
-    minHeight: '35%',
-    justifyContent: 'center', // Center vertically
-    alignItems: 'center',     // Center horizontally
+    marginHorizontal: "10%",
+    minHeight: "35%",
+    justifyContent: "center", // Center vertically
+    alignItems: "center", // Center horizontally
   },
   code: {
     fontSize: 24,
-    fontFamily: 'Poppins Light',
+    fontFamily: "Poppins Light",
   },
   textPassType: {
     fontSize: 12,
-    fontFamily: 'Poppins Semi-Bold',
-    alignSelf: 'center',
+    fontFamily: "Poppins Semi-Bold",
+    alignSelf: "center",
   },
   textValid: {
     fontSize: 12,
-    fontFamily: 'Poppins Semi-Bold',
-    alignSelf: 'center',
+    fontFamily: "Poppins Semi-Bold",
+    alignSelf: "center",
   },
   spacing: {
     height: 20,
   },
   refreshButtonContainer: {
-    position: 'relative',
+    position: "relative",
     zIndex: 2, // Higher z-index to be above the vector
   },
   refreshButton: {
@@ -583,16 +583,16 @@ const styles = StyleSheet.create({
     alignSelf: "center",
     backgroundColor: "#ff4967",
     borderRadius: 30,
-    marginTop: '20%',
+    marginTop: "20%",
     justifyContent: "center",
-    alignItems  : "center", 
+    alignItems: "center",
   },
   refreshButtonText: {
-    color: '#FFFFFF',
-    textAlign: 'center',
+    color: "#FFFFFF",
+    textAlign: "center",
     fontSize: 16,
-    fontFamily: 'Poppins Semi-Bold',
-    zIndex:1,
+    fontFamily: "Poppins Semi-Bold",
+    zIndex: 1,
   },
   /////////////////////////
   // Loading Screen
@@ -604,7 +604,88 @@ const styles = StyleSheet.create({
     fontSize: 16,
     color: "#000000",
     marginTop: 40,
-    fontFamily: "Poppins Regular",},
+    fontFamily: "Poppins Regular",
+  },
+  /////////////////////
+  // password recovery screen
+  containerRecovery: {
+    backgroundColor: colorScheme === "dark" ? "#000" : "#fff",
+    paddingTop: Platform.OS === "android" ? StatusBar.currentHeight : 0,
+    justifyContent: "center",
+    //flex: 1,
+  },
+  recoveryHeader: {
+    color: "black",
+    fontSize: 25,
+    textAlign: "center",
+    lineHeight: 30,
+    fontFamily: "Poppins Bold",
+    marginTop: '50%',
+  },
+  instructionsText: {
+    color: "black",
+    fontSize: 16,
+    textAlign: "center",
+    fontFamily: "Poppins Light",
+    marginHorizontal: 50,
+  },
+  recoveryInputField: {
+    padding: 10,
+    paddingStart: 20,
+    paddingEnd: 20,
+    borderWidth: 1.5,
+    borderColor: "#49497D",
+    borderRadius: 30,
+    marginLeft: 50,
+    marginRight: 50,
+    marginTop: 75,
+    fontFamily: "Poppins Light",
+    fontSize: 15,
+  },
+  recoveryButton: {
+    width: "50%",
+    alignSelf: "center",
+    backgroundColor: "#ff4967",
+    borderRadius: 25,
+    marginTop: 25,
+  },
+  recoveryButton1: {
+    width: "50%",
+    alignSelf: "center",
+    backgroundColor: "#ff4967",
+    borderRadius: 25,
+    marginTop: 25,
+    marginBottom:'95%'
+  },
+  successMessageContainer: {
+    backgroundColor: "white",
+    alignSelf: "center",
+    width: "70%",
+    borderRadius: 15,
+    height: 75,
+    marginTop: 75,
+    alignItems  : "center",
+    justifyContent: "center",
+  },
+  successMessageText: {
+    fontFamily: "Poppins Light",
+    alignSelf: "center",
+    textAlign: "center",
+    color: "black",
+  },
+  backHomeButton : {
+    color: "#FF4967", // Assuming this is the link color
+    fontFamily: "Poppins Semi-Bold",
+    fontSize: 15,
+    lineHeight: 20,
+    textDecorationLine: "none",
+    alignSelf: "center",
+    marginBottom:'50%'
+    // position: 'absolute',
+    // bottom: 20,
+
+  },
+  
 });
 
 const generateStyles = (isSelected) =>

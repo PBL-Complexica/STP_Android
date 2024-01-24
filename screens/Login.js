@@ -53,7 +53,7 @@ export default function Login({ navigation }) {
             secureTextEntry={!passwordVisibility}
           />
           {/* <Text style={styles.small_text2}>Forgot password</Text> */}
-          <TouchableOpacity onPress={() => navigation.navigate("")}>
+          <TouchableOpacity onPress={() => navigation.navigate("PasswordRecoveryScreen")}>
             <Text style={styles.small_text2}>Forgot password</Text>
           </TouchableOpacity>
 
