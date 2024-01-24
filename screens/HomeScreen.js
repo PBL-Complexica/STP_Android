@@ -14,6 +14,10 @@ export default function HomeScreen({ navigation }) {
   const [hasAccess, setHasAccess] = React.useState(true);
   const [refreshing, setRefreshing] = React.useState(true);
 
+  useEffect(() => {
+    setRefreshing(true);
+  }, []);
+
   if (refreshing) {
     getRefresh(navigation, setHasAccess);
     setRefreshing(false);
