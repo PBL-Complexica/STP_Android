@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import {
   Text,
   View,
@@ -8,13 +8,16 @@ import {
   TouchableOpacity,
 } from "react-native";
 import { styles } from "../styles/Styles";
-import { getData, getRefresh } from "../components/Requests";
-import { user } from "../components/UserData";
+import { getRefresh } from "../components/Requests";
 
 export default function HomeScreen({ navigation }) {
   const [hasAccess, setHasAccess] = React.useState(true);
+  const [refreshing, setRefreshing] = React.useState(true);
 
-  getRefresh(navigation, setHasAccess);
+  if (refreshing) {
+    getRefresh(navigation, setHasAccess);
+    setRefreshing(false);
+  }
 
   if (!hasAccess) {
     return (

@@ -44,11 +44,11 @@ export const postLogin = (emailOrPhone, password) => {
 // Returns true if refresh token is valid and access token is refreshed
 // Returns false otherwise
 export const getRefresh = (navigation, setHasAccess) => {
-  const [refresh, setRefresh] = useState(null);
-
+  var refresh = null;
   SecureStore.getItemAsync('refresh_token')
     .then(refreshToken => {
-      setRefresh(refreshToken);
+      // setRefresh(refreshToken);
+      refresh = refreshToken;
     })
     .then(() => {
       if (refresh) {
