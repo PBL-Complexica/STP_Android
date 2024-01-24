@@ -1,5 +1,6 @@
 import * as Device from 'expo-device';
 import * as SecureStore from 'expo-secure-store';
+import { tokens, user } from './UserData';
 
 const host = process.env.EXPO_PUBLIC_FLASK_HOST;
 
@@ -50,6 +51,7 @@ export const getRefresh = () => {
       .then(response => response.json())
       .then(data => {
         if (data.access_token) {
+          tokens.access = data.access_token;
           SecureStore.setItemAsync('access_token', data.access_token);
         }
       })
@@ -60,6 +62,27 @@ export const getRefresh = () => {
     return true;
   }
   return false;
+}
+
+export const getData = () => {
+  fetch(host + '/protected', {
+    method: 'GET',
+    headers: {
+      'Content-Type': 'application/json',
+      'Authorization': 'Bearer ' + tokens.access
+    }
+  })
+    .then(response => response.json())
+    .then(data => {
+      console.log(data.data);
+      user.id = data.data.user_id;
+      user.fname = data.data.first_name;
+      user.lname = data.data.last_name;
+      user.email = data.data.email_address;
+      user.phone = data.data.phone_number;
+      console.log(user)
+    })
+    .catch(error => console.log(error));
 }
 
 export const postSignup = (
