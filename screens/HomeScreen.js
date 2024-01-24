@@ -12,40 +12,38 @@ import { getData, getRefresh } from "../components/Requests";
 import { user } from "../components/UserData";
 
 export default function HomeScreen({ navigation }) {
-  if (getRefresh()) {
-    // Retrieve the data from the API
-    getData();
+  const [hasAccess, setHasAccess] = React.useState(true);
 
-    // Go to MainScreen if refresh token is valid
-    return navigation.navigate("MainScreen");
-  }
+  getRefresh(navigation, setHasAccess);
 
-  return (
-    <SafeAreaView style={styles.container}>
-      <View>
-        <Image
-          source={require("../assets/images/welcome_image.png")}
-          style={styles.welcome_image}
-        />
-        <Text style={styles.welcome_text}>Make things easier with STP.</Text>
-        <Text style={styles.default_text}>
-          STP is a free public transport subscription manager.
-        </Text>
-        <View style={{ padding: 50 }}>
-          <TouchableOpacity
-            style={styles.red_button}
-            onPress={() => navigation.navigate("Register")}
-          >
-            <Text style={styles.white_button_text}>Sign up</Text>
-          </TouchableOpacity>
-          <TouchableOpacity
-            style={styles.empty_button}
-            onPress={() => navigation.navigate("Login")}
-          >
-            <Text style={styles.black_button_text}>Log In</Text>
-          </TouchableOpacity>
+  if (!hasAccess) {
+    return (
+      <SafeAreaView style={styles.container}>
+        <View>
+          <Image
+            source={require("../assets/images/welcome_image.png")}
+            style={styles.welcome_image}
+          />
+          <Text style={styles.welcome_text}>Make things easier with STP.</Text>
+          <Text style={styles.default_text}>
+            STP is a free public transport subscription manager.
+          </Text>
+          <View style={{ padding: 50 }}>
+            <TouchableOpacity
+              style={styles.red_button}
+              onPress={() => navigation.navigate("Register")}
+            >
+              <Text style={styles.white_button_text}>Sign up</Text>
+            </TouchableOpacity>
+            <TouchableOpacity
+              style={styles.empty_button}
+              onPress={() => navigation.navigate("Login")}
+            >
+              <Text style={styles.black_button_text}>Log In</Text>
+            </TouchableOpacity>
+          </View>
         </View>
-      </View>
-    </SafeAreaView>
-  );
+      </SafeAreaView>
+    );
+  }
 }
