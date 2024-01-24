@@ -19,7 +19,6 @@ export default function Register({ navigation }) {
   const [phone, setPhone] = useState("");
   const [password, setPassword] = useState("");
   const [passwordVisibility, setPasswordVisibility] = useState(false);
-  const [refreshing, setRefreshing] = useState(true);
 
   const handleSignUp = () => {
     // Add your logic for handling sign up here
@@ -32,13 +31,10 @@ export default function Register({ navigation }) {
     console.log("Phone:", phone);
     console.log("Password:", password);
 
-    if (refreshing) {
-      setRefreshing(false);
-      postSignup(firstName, lastName, email, phone, password);
-    }
+    postSignup(firstName, lastName, phone, email, password, navigation);
 
     // Navigate to MainScreen and pass the username as a parameter
-    navigation.navigate("MainScreen");
+    // navigation.navigate("MainScreen");
   };
 
   return (

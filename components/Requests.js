@@ -105,7 +105,29 @@ export const postSignup = (
   lastName, 
   phoneNumber,
   emailAddress,
-  password 
+  password,
+  navigation 
 ) => {
-  // TODO: Add logic for handling sign up here
+  fetch(host + '/signup', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({
+      first_name: firstName,
+      last_name: lastName,
+      phone_number: phoneNumber,
+      email_address: emailAddress,
+      password: password,
+      device_name: Device.modelName,
+      birth_date: null, // TODO: Get birth date
+    })
+  })
+    // TODO: Add response handling
+    .then(response => response.json())
+    .then(data => {
+      console.log(data);
+      postLogin(phoneNumber, password, navigation);
+    })
+    .catch(error => console.log(error));
 }
