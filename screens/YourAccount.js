@@ -15,7 +15,8 @@ import { user } from "../components/UserData";
 
 export default function YourAccount({ navigation }) {
   const [editMode, setEditMode] = useState(false);
-  const [name_surname, setNameSurname] = useState(user.fname + " " + user.lname);
+  const [fname, setFname] = useState(user.fname);
+  const [lname, setLname] = useState(user.lname);
   const [birthday, setBirthday] = useState(user.birthday);
   const [phoneNumber, setPhoneNumber] = useState(user.phone);
   const [email, setEmail] = useState(user.email);
@@ -23,15 +24,17 @@ export default function YourAccount({ navigation }) {
 
   const handleEditProfile = () => {
     setEditMode(!editMode);
+    setPassword("");
   };
 
   const handleSaveProfile = () => {
     // Here, you can send the updated profile data to your server
     // For simplicity, let's just log the updated data for now
-    console.log("Updated Profile Data:", { name_surname, birthday, phoneNumber, email, password });
+    console.log("Updated Profile Data:", { fname, lname, birthday, phoneNumber, email, password });
 
     // After saving, exit edit mode
     setEditMode(false);
+    setPassword("********");
   };
 
   return (
@@ -47,15 +50,28 @@ export default function YourAccount({ navigation }) {
         <Image source={require("../assets/images/img1.png")} style={styles.profileImage} />
 
         {/* Name */}
-        <Text style={styles.label}>Name Surname</Text>
+        <Text style={styles.label}>First Name</Text>
         {editMode ? (
           <TextInput
             style={styles.profileText}
-            value={name_surname}
-            onChangeText={(text) => setNameSurname(text)}
+            value={fname}
+            onChangeText={(text) => setFname(text)}
           />
         ) : (
-          <Text style={styles.profileText}>{name_surname}</Text>
+          <Text style={styles.profileText}>{fname}</Text>
+        )}
+
+        <View style={styles.separatorLine}></View>
+
+        <Text style={styles.label}>Last Name</Text>
+        {editMode ? (
+          <TextInput
+            style={styles.profileText}
+            value={lname}
+            onChangeText={(text) => setLname(text)}
+          />
+        ) : (
+          <Text style={styles.profileText}>{lname}</Text>
         )}
         {/* Separator Line */}
         <View style={styles.separatorLine}></View>
