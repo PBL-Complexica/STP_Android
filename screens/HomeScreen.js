@@ -12,16 +12,11 @@ import { getRefresh } from "../components/Requests";
 
 export default function HomeScreen({ navigation }) {
   const [hasAccess, setHasAccess] = React.useState(true);
-  const [refreshing, setRefreshing] = React.useState(true);
 
   useEffect(() => {
-    setRefreshing(true);
+    getRefresh(navigation, setHasAccess);
   }, []);
 
-  if (refreshing) {
-    getRefresh(navigation, setHasAccess);
-    setRefreshing(false);
-  }
 
   if (!hasAccess) {
     return (
