@@ -7,9 +7,27 @@ import {
   Image,
   TouchableOpacity,
 } from "react-native";
+import * as SecureStore from "expo-secure-store";
 
 import BackButton from "../components/BackButton";
 import { styles } from "../styles/Styles";
+import { user, tokens } from "../components/UserData";
+
+function handleLogout(navigation) {
+  user.id = null;
+  user.fname = null;
+  user.lname = null;
+  user.email = null;
+  user.phone = null;
+  tokens.access = null;
+
+  SecureStore.deleteItemAsync("access_token");
+  SecureStore.deleteItemAsync("refresh_token");
+
+  // setRefreshing(true);
+
+  navigation.navigate("HomeScreen");
+}
 
 export default function Settings({ navigation }) {
   const handleOptionPress = (option, navigation) => {
@@ -40,7 +58,7 @@ export default function Settings({ navigation }) {
               source={require("../assets/images/img1.png")}
               style={styles.profileImage1}
             />
-            <Text style={styles.userName}>(UserName)</Text>
+            <Text style={styles.userName}>{user.fname}</Text>
           </View>
 
           {/* Options List */}
@@ -86,7 +104,7 @@ export default function Settings({ navigation }) {
           <View style={styles.logOutContainer}>
             <TouchableOpacity
               style={styles.logOutButton}
-              onPress={() => navigation.navigate("Home")}
+              onPress={() => handleLogout(navigation)}
             >
               <Text style={styles.logOutButtonText}>Log out</Text>
             </TouchableOpacity>
