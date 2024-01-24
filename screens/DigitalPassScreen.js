@@ -6,8 +6,9 @@ import {
   SafeAreaView,
   Image,
   TouchableOpacity,
-  ActivityIndicator,
+  ActivityIndicator
 } from "react-native";
+import Barcode from '@kichiyaki/react-native-barcode-generator';
 
 import BackButton from "../components/BackButton";
 import { styles } from "../styles/Styles";
@@ -51,6 +52,7 @@ export default function DigitalPassScreen({ navigation }) {
         <View style={styles.grayBox}>
           {/* Code */}
           <Text style={styles.code}>YourQRCodeHere</Text>
+          <Barcode value="Value" format="CODE128"/>
         </View>
 
         {/* Additional information */}
