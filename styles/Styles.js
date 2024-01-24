@@ -135,7 +135,7 @@ const styles = StyleSheet.create({
     borderRadius: 25,
     marginTop: 60,
   },
-  buttonRow: {
+  buttonRow1: {
     flexDirection: "row", // Align items in a row
     alignSelf: "center", // Center the row within its container
     marginTop: 20, // Adjust the spacing as needed

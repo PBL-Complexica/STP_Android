@@ -64,7 +64,7 @@ export default function Register({ navigation }) {
             <Text style={styles.white_button_text}>Sign up</Text>
           </TouchableOpacity>
 
-          <View style={styles.buttonRow}>
+          <View style={styles.buttonRow1}>
             <Text style={styles.small_text}>Already have an account?</Text>
             <TouchableOpacity onPress={() => navigation.navigate("Login")}>
               <Text style={styles.link_text}>Log in</Text>

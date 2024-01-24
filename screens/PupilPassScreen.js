@@ -127,14 +127,14 @@ export default function PupilPassScreen({ navigation }) {
           <View style={styles.buttonRow}>
             <TouchableOpacity
               style={styles.cancelButton}
-              onPress={() => navigation.navigate("")}
-            >
+              onPress={() =>     navigation.navigate("MainScreen", { userName: null })}
+              >
               <Text style={styles.black_button_text}>Cancel</Text>
             </TouchableOpacity>
             <TouchableOpacity
               style={styles.confirmButton}
-              onPress={() => navigation.navigate("")}
-            >
+              onPress={() =>     navigation.navigate("MainScreen", { userName: null })}
+              >
               <Text style={styles.white_button_text}>Confirm</Text>
             </TouchableOpacity>
           </View>
