@@ -199,7 +199,8 @@ const styles = StyleSheet.create({
   subscriptionBox: {
     backgroundColor: "#49497D",
     borderRadius: 25,
-    minHeight: 125,
+    minHeight: 100,
+    maxHeight: 120,
     margin: 20,
     marginTop: 30,
     marginBottom: 10,
@@ -218,8 +219,8 @@ const styles = StyleSheet.create({
     fontSize: 16,
     fontFamily: "Poppins Bold",
     color: "#fff",
-    marginBottom: 5, // Add some space between header and subheader
-    maxWidth: "90%",
+    marginBottom: 15, // Add some space between header and subheader
+    maxWidth: "80%",
   },
 
   subscriptionSubheaderText: {
