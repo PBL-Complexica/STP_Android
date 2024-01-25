@@ -8,7 +8,12 @@ import {
 } from "react-native";
 
 import { styles, generateStyles } from "../styles/Styles";
-import { user } from "../components/UserData";
+import { subscriptionDetails, user } from "../components/UserData";
+import { generateSubscriptionOTP } from "../components/Requests";
+
+function genSubscriptionData(navigation) {
+  generateSubscriptionOTP(navigation);
+}
 
 export default function MainScreen({ navigation }) {
 
@@ -68,13 +73,13 @@ export default function MainScreen({ navigation }) {
         {/* Subscription Box */}
         <TouchableOpacity
           style={styles.subscriptionBox}
-          onPress={() => navigation.navigate("DigitalPassScreen")}
+          onPress={() => genSubscriptionData(navigation)}
         >
           <View style={styles.subscriptionTextContainer}>
             <Text style={styles.subscriptionHeaderText}>
               General Subscription Active
             </Text>
-            <Text style={styles.subscriptionSubheaderText}>29 days left</Text>
+            <Text style={styles.subscriptionSubheaderText}>{ subscriptionDetails.days_left } Days Left</Text>
           </View>
           <Image
             source={require("../assets/images/person_image.png")}
