@@ -8,13 +8,14 @@ import {
   TouchableOpacity,
 } from "react-native";
 import { styles } from "../styles/Styles";
-import { getRefresh } from "../components/Requests";
+import { getRefresh, getSubscriptionData } from "../components/Requests";
 
 export default function HomeScreen({ navigation }) {
   const [hasAccess, setHasAccess] = React.useState(true);
 
   useEffect(() => {
     getRefresh(navigation, setHasAccess);
+    getSubscriptionData();
   }, []);
 
 

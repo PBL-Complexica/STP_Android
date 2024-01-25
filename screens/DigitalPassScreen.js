@@ -10,22 +10,36 @@ import {
 } from "react-native";
 import Barcode from '@kichiyaki/react-native-barcode-generator';
 
-import BackButton from "../components/BackButton";
 import { styles } from "../styles/Styles";
+import { generateSubscriptionOTP } from "../components/Requests";
+import { subscriptionDetails } from "../components/UserData";
+import { usePreventScreenCapture } from "expo-screen-capture";
+
+function GetBarcode() {
+  if (subscriptionDetails.subscrption_otp == null) {
+    return (
+      <Text style = {styles.code}> No active subscription </Text>
+    );
+  }
+  else {
+    return (
+      <Barcode
+        value={subscriptionDetails.subscrption_otp}
+        format="CODE128"
+        text={subscriptionDetails.subscrption_otp}
+        height={200}
+        textStyle={{ fontSize: 24 }}
+        lineColor="#000000"
+        background="#ededee"
+      />
+    );
+  }
+}
 
 export default function DigitalPassScreen({ navigation }) {
   const [refreshing, setRefreshing] = useState(false);
 
-  const refreshCode = () => {
-    setRefreshing(true);
-
-    // Perform code refresh logic here (e.g., fetching a new QR code)
-    // Replace the setTimeout with your actual code refresh logic
-    setTimeout(() => {
-      setRefreshing(false);
-      navigation.navigate("LoadingScreen");
-    }, 2000); // Simulating a delay of 2 seconds for code refresh
-  };
+  // usePreventScreenCapture();
 
   return (
     <SafeAreaView style={styles.container}>
@@ -51,20 +65,19 @@ export default function DigitalPassScreen({ navigation }) {
         {/* Gray box with rounded corners */}
         <View style={styles.grayBox}>
           {/* Code */}
-          <Text style={styles.code}>YourQRCodeHere</Text>
-          <Barcode value="Value" format="CODE128"/>
+          <GetBarcode/>
         </View>
 
         {/* Additional information */}
-        <Text style={styles.textPassType}>Monthly Pass</Text>
-        <Text style={styles.textValid}>Valid until 13.02.2024</Text>
+        <Text style={styles.textPassType}> {subscriptionDetails.name} </Text>
+        <Text style={styles.textValid}> {subscriptionDetails.duration} </Text>
 
         {/* Refresh code button */}
-        <View style={styles.refreshButtonContainer}>
+        {/* <View style={styles.refreshButtonContainer}>
           <TouchableOpacity style={styles.refreshButton} onPress={refreshCode} disabled={refreshing}>
             <Text style={styles.refreshButtonText}>Refresh Code</Text>
           </TouchableOpacity>
-        </View>
+        </View> */}
 
         {/* Vector at the Bottom */}
         <View style={styles.vectorContainerBottom}>

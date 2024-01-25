@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 
 import * as Device from 'expo-device';
 import * as SecureStore from 'expo-secure-store';
-import { tokens, user } from './UserData';
+import { subscriptionDetails, tokens, user } from './UserData';
 
 const host = process.env.EXPO_PUBLIC_FLASK_HOST;
 
@@ -129,4 +129,68 @@ export const postSignup = (
       postLogin(phoneNumber, password, navigation);
     })
     .catch(error => console.log(error));
+}
+
+export const getSubscriptionData = () => {
+  SecureStore.getItemAsync('access_token')
+    .then(accessToken => {
+      fetch(host + '/get_user_subscription', {
+        method: 'GET',
+        headers: {
+          'Authorization': 'Bearer ' + accessToken,
+        }
+      })
+        .then(response => {
+          if (response.status == 200) {
+            return response.json();
+          }
+          else {
+            return null;
+          }
+        })
+        .then(data => {
+          if (data) {
+            console.log(data);
+            subscriptionDetails.name = data.name;
+            subscriptionDetails.duration = data.duration;
+            subscriptionDetails.days_left = data.days_left;
+            subscriptionDetails.purchaseDate = data.valid_from;
+          }
+          else {
+            console.log("No subscription data");
+          }
+        })
+        .catch(error => console.log(error));
+    });
+}
+
+export const generateSubscriptionOTP = (navigation) => {
+  SecureStore.getItemAsync('access_token')
+    .then(accessToken => {
+      fetch(host + '/generate_subscription_otp', {
+        method: 'GET',
+        headers: {
+          'Authorization': 'Bearer ' + accessToken,
+        }
+      })
+        .then(response => {
+          if (response.status == 200) {
+            return response.json();
+          }
+          else {
+            return null;
+          }
+        })
+        .then(data => {
+          if (data){ 
+            subscriptionDetails.subscrption_otp = data.subscription_key;
+            navigation.navigate("DigitalPassScreen")
+          }
+          else {
+            subscriptionDetails.subscrption_otp = null;
+            navigation.navigate("DigitalPassScreen")
+          }
+        })
+        .catch(error => console.log(error));
+    });
 }

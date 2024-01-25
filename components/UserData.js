@@ -15,4 +15,6 @@ export const subscriptionDetails = {
   name: null,
   duration: null,
   purchaseDate: null,
+  days_left: null,
+  subscrption_otp: null,
 }
