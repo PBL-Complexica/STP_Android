@@ -82,7 +82,7 @@ export default function MainScreen({ navigation }) {
             <Text style={styles.subscriptionSubheaderText}>{ subscriptionDetails.days_left } Days Left</Text>
           </View>
           <Image
-            source={require("../assets/images/person_image.png")}
+            source={require("../assets/images/person2.png")}
             style={styles.personImage}
           />
         </TouchableOpacity>
