@@ -66,6 +66,7 @@ export const getRefresh = (navigation, setHasAccess) => {
             console.log(data);
             tokens.access = data.access_token;
             setHasAccess(true);
+            getSubscriptionData()
             getData(navigation);
           }
         })
@@ -189,6 +190,43 @@ export const generateSubscriptionOTP = (navigation) => {
           else {
             subscriptionDetails.subscrption_otp = null;
             navigation.navigate("DigitalPassScreen")
+          }
+        })
+        .catch(error => console.log(error));
+    });
+}
+
+export const buySubscription = (subscription_type, payment_method) => {
+  SecureStore.getItemAsync('access_token')
+    .then(accessToken => {
+      fetch(host + '/buy_subscription', {
+        method: 'POST',
+        headers: {
+          'Authorization': 'Bearer ' + accessToken,
+        },
+        body: JSON.stringify({
+          subscription_type: subscription_type,
+          payment_method: payment_method,
+        })
+      })
+        .then(response => {
+          if (response.status == 200) {
+            return response.json();
+          }
+          else {
+            return null;
+          }
+        })
+        .then(data => {
+          if (data) {
+            console.log(data);
+            subscriptionDetails.name = data.name;
+            subscriptionDetails.duration = data.duration;
+            subscriptionDetails.days_left = data.days_left;
+            subscriptionDetails.purchaseDate = data.valid_from;
+          }
+          else {
+            console.log("No subscription data");
           }
         })
         .catch(error => console.log(error));
