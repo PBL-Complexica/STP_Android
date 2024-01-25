@@ -78,7 +78,7 @@ export default function MainScreen({ navigation, route }) {
             <Text style={styles.subscriptionSubheaderText}>29 days left</Text>
           </View>
           <Image
-            source={require("../assets/images/person_image.png")}
+            source={require("../assets/images/person2.png")}
             style={styles.personImage}
           />
         </TouchableOpacity>

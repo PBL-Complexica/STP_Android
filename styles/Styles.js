@@ -199,6 +199,7 @@ const styles = StyleSheet.create({
   subscriptionBox: {
     backgroundColor: "#49497D",
     borderRadius: 25,
+    minHeight: 125,
     margin: 20,
     marginTop: 30,
     marginBottom: 10,
@@ -210,7 +211,7 @@ const styles = StyleSheet.create({
 
   subscriptionTextContainer: {
     flex: 1,
-    marginRight: 15, // Add some space between text and image
+    alignSelf: "center",
   },
 
   subscriptionHeaderText: {
@@ -218,7 +219,7 @@ const styles = StyleSheet.create({
     fontFamily: "Poppins Bold",
     color: "#fff",
     marginBottom: 5, // Add some space between header and subheader
-    maxWidth: "70%",
+    maxWidth: "90%",
   },
 
   subscriptionSubheaderText: {
@@ -228,11 +229,10 @@ const styles = StyleSheet.create({
   },
 
   personImage: {
-    width: 130,
-    height: 130,
-    position: "absolute", // Set position to absolute
-    top: -25, // Adjust the top value as needed
-    right: 10, // Adjust the right value as needed
+    aspectRatio: 1,
+    width: "30%", // Adjust the width as needed
+    marginRight: 0,
+    resizeMode: "contain", // Ensure the entire image is visible without cropping
   },
   availableSubscriptions: {
     marginTop: 20,
@@ -620,7 +620,7 @@ const styles = StyleSheet.create({
     textAlign: "center",
     lineHeight: 30,
     fontFamily: "Poppins Bold",
-    marginTop: '50%',
+    marginTop: "50%",
   },
   instructionsText: {
     color: "black",
@@ -655,7 +655,7 @@ const styles = StyleSheet.create({
     backgroundColor: "#ff4967",
     borderRadius: 25,
     marginTop: 25,
-    marginBottom:'95%'
+    marginBottom: "95%",
   },
   successMessageContainer: {
     backgroundColor: "white",
@@ -664,7 +664,7 @@ const styles = StyleSheet.create({
     borderRadius: 15,
     height: 75,
     marginTop: 75,
-    alignItems  : "center",
+    alignItems: "center",
     justifyContent: "center",
   },
   successMessageText: {
@@ -673,19 +673,17 @@ const styles = StyleSheet.create({
     textAlign: "center",
     color: "black",
   },
-  backHomeButton : {
+  backHomeButton: {
     color: "#FF4967", // Assuming this is the link color
     fontFamily: "Poppins Semi-Bold",
     fontSize: 15,
     lineHeight: 20,
     textDecorationLine: "none",
     alignSelf: "center",
-    marginBottom:'50%'
+    marginBottom: "50%",
     // position: 'absolute',
     // bottom: 20,
-
   },
-  
 });
 
 const generateStyles = (isSelected) =>
