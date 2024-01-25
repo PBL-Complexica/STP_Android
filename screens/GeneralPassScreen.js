@@ -4,21 +4,22 @@ import DropDownPicker from "react-native-dropdown-picker";
 
 import BackButton from "../components/BackButton";
 import { styles } from "../styles/Styles";
+import { buySubscription } from "../components/Requests";
 
 export default function GeneralPassScreen({ navigation }) {
   const handleSubscription = () => {
-    // Handle subscription logic here
-    // console.log("Duration:", duration);
-    // console.log("Start Date:", startDate);
-    // console.log("Payment Method:", paymentMethod);
+    // console.log("Duration:", value);
+    // console.log("Payment Method:", valuePayment);
+
+    buySubscription(value, valuePayment);
   };
 
   const [open, setOpen] = useState(false);
   const [value, setValue] = useState(null);
   const [items, setItems] = useState([
-    { label: "1 Month", value: "1_month" },
-    { label: "3 Months", value: "3_months" },
-    { label: "6 Months", value: "6_months" },
+    { label: "1 Month", value: "G-1" },
+    { label: "3 Months", value: "G-3" },
+    { label: "6 Months", value: "G-6" },
   ]);
 
   const [openPayment, setOpenPayment] = useState(false);
@@ -104,10 +105,10 @@ export default function GeneralPassScreen({ navigation }) {
             setItems={setItems}
           />
 
-          <Text style={styles.inputLabel}>Starting from:</Text>
+          {/* <Text style={styles.inputLabel}>Starting from:</Text> */}
 
           {/* Subscription Start Month Picker */}
-          <DropDownPicker
+          {/* <DropDownPicker
             style={styles.monthDropdown}
             open={openSubscriptionMonth}
             value={valueSubscriptionMonth}
@@ -116,7 +117,8 @@ export default function GeneralPassScreen({ navigation }) {
             setOpen={setOpenSubscriptionMonth}
             setValue={setValueSubscriptionMonth}
             setItems={setItemsSubscriptionMonth}
-          />
+          /> */}
+
 
           <Text style={styles.inputLabel}>How would you like to pay?</Text>
           {/* Payment Method Picker */}
@@ -139,7 +141,8 @@ export default function GeneralPassScreen({ navigation }) {
           </TouchableOpacity>
           <TouchableOpacity
             style={styles.confirmButton}
-            onPress={() =>     navigation.navigate("MainScreen", { userName: null })}
+            // onPress={() => navigation.navigate("MainScreen", { userName: null })}
+            onPress={() => handleSubscription()}
           >
             <Text style={styles.white_button_text}>Confirm</Text>
           </TouchableOpacity>

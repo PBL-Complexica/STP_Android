@@ -15,7 +15,48 @@ function genSubscriptionData(navigation) {
   generateSubscriptionOTP(navigation);
 }
 
+
+
 export default function MainScreen({ navigation }) {
+  function GetSubscriptionStatus() {
+    if (subscriptionDetails.name == null) {
+      return (
+      <TouchableOpacity
+        style={styles.subscriptionBox}
+        onPress={() => {}}
+      >
+        <View style={styles.subscriptionTextContainer}>
+          <Text style={styles.subscriptionHeaderText}>
+            Subscription Inactive
+          </Text>
+        </View>
+        <Image
+          source={require("../assets/images/person2.png")}
+          style={styles.personImage}
+        />
+      </TouchableOpacity>
+      );
+  
+    } else {
+      return (
+        <TouchableOpacity
+          style={styles.subscriptionBox}
+          onPress={() => genSubscriptionData(navigation)}
+        >
+          <View style={styles.subscriptionTextContainer}>
+            <Text style={styles.subscriptionHeaderText}>
+              General Subscription Active
+            </Text>
+            <Text style={styles.subscriptionSubheaderText}>{ subscriptionDetails.days_left } Days Left</Text>
+          </View>
+          <Image
+            source={require("../assets/images/person2.png")}
+            style={styles.personImage}
+          />
+        </TouchableOpacity>
+      );
+    }
+  }
 
   // Array representing subscription boxes
   const subscriptionBoxes = [
@@ -71,21 +112,7 @@ export default function MainScreen({ navigation }) {
         </View>
 
         {/* Subscription Box */}
-        <TouchableOpacity
-          style={styles.subscriptionBox}
-          onPress={() => genSubscriptionData(navigation)}
-        >
-          <View style={styles.subscriptionTextContainer}>
-            <Text style={styles.subscriptionHeaderText}>
-              General Subscription Active
-            </Text>
-            <Text style={styles.subscriptionSubheaderText}>{ subscriptionDetails.days_left } Days Left</Text>
-          </View>
-          <Image
-            source={require("../assets/images/person2.png")}
-            style={styles.personImage}
-          />
-        </TouchableOpacity>
+        <GetSubscriptionStatus />
 
         {/* Available Subscriptions Section */}
         <View style={styles.availableSubscriptions}>
